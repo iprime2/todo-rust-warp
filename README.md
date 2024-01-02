@@ -9,7 +9,11 @@ To start the application, follow these steps:
 1. Clone the repository.
 2. Make sure you have Rust and Cargo installed.
 3. Navigate to the project directory.
-4. Run the following command to start the application:
+4. Install the `cargo-watch` crate by running the following command:
+   ```
+    cargo install cargo-watch
+   ```
+5. Run the following command to start the application:
   ```
   cargo run
   ```
@@ -18,7 +22,20 @@ To start the application, follow these steps:
   cargo watch -x run
   ```
 
-5. The application will start running on `http://127.0.0.1:1313`.
+6. The application will start running on `http://127.0.0.1:1313`.
+
+## Test Apis
+1. Install the REST Client extension for VS Code. This extension allows you to send HTTP requests directly from VS Code       using the `dev.http` file.
+2. Navigate to the project directory.
+3. Run the following command to start the application:
+   ```
+  cargo run
+  ```
+  or
+  ```
+  cargo watch -x run
+  ```
+4. Open the `dev.http` file. Inside this file you will `Send Request`. Click on that to make API request. 
 
 ## APIs
 The application provides the following APIs:
@@ -117,10 +134,20 @@ The application provides the following APIs:
 - Method: GET
 - Example Request:
   http
+  ```
   GET http://127.0.0.1:1313/hi
+  X-Auth-Token: 123.exp.signature
+  Content-Type: application/json
+  ```
 - Example Response:
+  ```
+  HTTP/1.1 200 OK
+  content-type: text/plain; charset=utf-8
+  content-length: 10
+  date: Tue, 02 Jan 2024 11:11:37 GMT
+  
   Hi, World!
-
+  ```
 
 ## Static Content
 The application serves static content from the [web-folder](file:///c%3A/Users/Ashish%20Gupta/Desktop/Rust/FirstWebApp/src/main.rs#8%2C27-8%2C27) directory. The root URL (`http://127.0.0.1:1313/`) serves the `index.html` file from the [web-folder](file:///c%3A/Users/Ashish%20Gupta/Desktop/Rust/FirstWebApp/src/main.rs#8%2C27-8%2C27).
