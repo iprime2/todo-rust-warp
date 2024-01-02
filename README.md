@@ -24,7 +24,7 @@ To start the application, follow these steps:
 The application provides the following APIs:
 
 ### Create Todos
-- Endpoint: `/todos/{id}`
+- Endpoint: `/todos`
 - Method: POST
 - Headers:
   - [X-Auth-Token](file:///c%3A/Users/Ashish%20Gupta/Desktop/Rust/FirstWebApp/dev.http#4%2C1-4%2C1): The authentication token
