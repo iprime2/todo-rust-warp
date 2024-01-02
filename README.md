@@ -14,13 +14,13 @@ To start the application, follow these steps:
     cargo install cargo-watch
    ```
 5. Run the following command to start the application:
-  ```
-  cargo run
-  ```
-  or
-  ```
-  cargo watch -x run
-  ```
+     ```
+     cargo run
+     ```
+     or
+     ```
+     cargo watch -x run
+     ```
 
 6. The application will start running on `http://127.0.0.1:1313`.
 
@@ -28,13 +28,13 @@ To start the application, follow these steps:
 1. Install the REST Client extension for VS Code. This extension allows you to send HTTP requests directly from VS Code       using the `dev.http` file.
 2. Navigate to the project directory.
 3. Run the following command to start the application:
-   ```
-  cargo run
-  ```
-  or
-  ```
-  cargo watch -x run
-  ```
+      ```
+     cargo run
+     ```
+     or
+     ```
+     cargo watch -x run
+     ```
 4. Open the `dev.http` file. Inside this file you will `Send Request`. Click on that to make API request. 
 
 ## APIs
