@@ -10,14 +10,48 @@ To start the application, follow these steps:
 2. Make sure you have Rust and Cargo installed.
 3. Navigate to the project directory.
 4. Run the following command to start the application:
-```
-cargo run
-```
+  ```
+  cargo run
+  ```
+  or
+  ```
+  cargo watch -x run
+  ```
 
 5. The application will start running on `http://127.0.0.1:1313`.
 
 ## APIs
 The application provides the following APIs:
+
+### Create Todos
+- Endpoint: `/todos/{id}`
+- Method: POST
+- Headers:
+  - [X-Auth-Token](file:///c%3A/Users/Ashish%20Gupta/Desktop/Rust/FirstWebApp/dev.http#4%2C1-4%2C1): The authentication token
+- Example Request:
+  http
+  ```
+  POST http://127.0.0.1:1313/todos
+  X-Auth-Token: 123.exp.signature
+  Content-Type: application/json
+
+  {
+    "id":5,
+    "title":"Todo test"
+  }
+  ```
+- Example Response:
+  ```js
+  HTTP/1.1 200 OK
+  content-type: application/json
+  content-length: 28
+  date: Tue, 02 Jan 2024 11:07:59 GMT
+  
+  {
+    "id": 5,
+    "title": "Todo test"
+  }
+  ```
 
 ### Get Todos
 - Endpoint: `/todos/{id}`
@@ -26,15 +60,55 @@ The application provides the following APIs:
   - [X-Auth-Token](file:///c%3A/Users/Ashish%20Gupta/Desktop/Rust/FirstWebApp/dev.http#4%2C1-4%2C1): The authentication token
 - Example Request:
   http
+  ```
   GET http://127.0.0.1:1313/todos/123
   X-Auth-Token: 123.exp.signature
   Content-Type: application/json
+  ```
 - Example Response:
   ```js
-  json
+  HTTP/1.1 200 OK
+  content-type: application/json
+  content-length: 97
+  date: Tue, 02 Jan 2024 11:06:22 GMT
+
+  [
+    {
+      "completed": true,
+      "id": 1,
+      "task": "Learn Rust"
+    },
+    {
+      "completed": false,
+      "id": 2,
+      "task": "Learn GraphQL"
+    }
+  ]
+  ```
+
+### Get Todos
+- Endpoint: `/todos/{id}`
+- Method: GET
+- Headers:
+  - [X-Auth-Token](file:///c%3A/Users/Ashish%20Gupta/Desktop/Rust/FirstWebApp/dev.http#4%2C1-4%2C1): The authentication token
+- Example Request:
+  http
+  ```
+  GET http://127.0.0.1:1313/todos/123
+  X-Auth-Token: 123.exp.signature
+  Content-Type: application/json
+  ```
+- Example Response:
+  ```js
+  HTTP/1.1 200 OK
+  content-type: application/json
+  content-length: 45
+  date: Tue, 02 Jan 2024 11:07:03 GMT
+  
   {
-  "id": 5,
-  "title": "Todo test"
+    "completed": true,
+    "id": 1,
+    "task": "Learn Rust"
   }
   ```
 
