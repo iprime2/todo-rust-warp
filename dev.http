@@ -1,0 +1,10 @@
+## Quick Dev
+
+GET http://127.0.0.1:1313/todos/123
+X-Auth-Token: 123.exp.signature
+Content-Type: application/json
+
+{
+    "id":5,
+    "title":"Todo test"
+}
